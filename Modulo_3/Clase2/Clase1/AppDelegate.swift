@@ -7,11 +7,25 @@
 //
 
 import UIKit
+import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    lazy var persistentContent: NSPersistentContainer = {
+        
+        let container  = NSPersistentContainer(name: "Clase1")
+        container.loadPersistentStores(completionHandler: { (storeDescripcion, error) in
+            
+            if let _ = error {
+                print(error!.localizedDescription)
+            }
+        })
+        
+        return container
+    }()
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {

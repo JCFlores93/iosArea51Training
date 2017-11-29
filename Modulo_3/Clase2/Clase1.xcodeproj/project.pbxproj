@@ -18,6 +18,9 @@
 		8401CE681FC905AF00488CA1 /* PostService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8401CE671FC905AF00488CA1 /* PostService.swift */; };
 		8401CE6A1FC905D800488CA1 /* CommentService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8401CE691FC905D800488CA1 /* CommentService.swift */; };
 		8401CE6C1FC9068500488CA1 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8401CE6B1FC9068500488CA1 /* NewPostViewController.swift */; };
+		8467AF101FCCE45500831DC9 /* DetailPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8467AF0F1FCCE45500831DC9 /* DetailPostViewController.swift */; };
+		8467AF151FCCEB2F00831DC9 /* Clase1.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8467AF131FCCEB2F00831DC9 /* Clase1.xcdatamodeld */; };
+		8467AF181FCD019700831DC9 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8467AF171FCD019700831DC9 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,9 @@
 		8401CE671FC905AF00488CA1 /* PostService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostService.swift; sourceTree = "<group>"; };
 		8401CE691FC905D800488CA1 /* CommentService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentService.swift; sourceTree = "<group>"; };
 		8401CE6B1FC9068500488CA1 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
+		8467AF0F1FCCE45500831DC9 /* DetailPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailPostViewController.swift; sourceTree = "<group>"; };
+		8467AF141FCCEB2F00831DC9 /* Clase1.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Clase1.xcdatamodel; sourceTree = "<group>"; };
+		8467AF171FCD019700831DC9 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		D34E54A75B1379C9F5635DF4 /* Pods-Clase1.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clase1.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Clase1/Pods-Clase1.debug.xcconfig"; sourceTree = "<group>"; };
 		FE71111587BF4EA9AF9D7C87 /* Pods-Clase1.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Clase1.release.xcconfig"; path = "Pods/Target Support Files/Pods-Clase1/Pods-Clase1.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -95,7 +101,9 @@
 		8401CE591FC8FC0F00488CA1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				8467AF111FCCEB1400831DC9 /* Database */,
 				8401CE661FC9059700488CA1 /* Services */,
+				8467AF171FCD019700831DC9 /* Constants.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -113,6 +121,7 @@
 			children = (
 				8401CE601FC8FC8400488CA1 /* PostListViewController.swift */,
 				8401CE6B1FC9068500488CA1 /* NewPostViewController.swift */,
+				8467AF0F1FCCE45500831DC9 /* DetailPostViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -140,6 +149,30 @@
 				8401CE691FC905D800488CA1 /* CommentService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		8467AF111FCCEB1400831DC9 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				8467AF161FCCEB3D00831DC9 /* Entity */,
+				8467AF121FCCEB1F00831DC9 /* Model */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
+		8467AF121FCCEB1F00831DC9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				8467AF131FCCEB2F00831DC9 /* Clase1.xcdatamodeld */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8467AF161FCCEB3D00831DC9 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Entity;
 			sourceTree = "<group>";
 		};
 		E02A7A05B09F665BB45F8409 /* Frameworks */ = {
@@ -292,11 +325,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				8401CE611FC8FC8400488CA1 /* PostListViewController.swift in Sources */,
+				8467AF101FCCE45500831DC9 /* DetailPostViewController.swift in Sources */,
 				8401CE471FC8F2D000488CA1 /* AppDelegate.swift in Sources */,
 				8401CE641FC8FD5100488CA1 /* PostCell.swift in Sources */,
+				8467AF151FCCEB2F00831DC9 /* Clase1.xcdatamodeld in Sources */,
 				8401CE6A1FC905D800488CA1 /* CommentService.swift in Sources */,
 				8401CE681FC905AF00488CA1 /* PostService.swift in Sources */,
 				8401CE6C1FC9068500488CA1 /* NewPostViewController.swift in Sources */,
+				8467AF181FCD019700831DC9 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,6 +509,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8467AF131FCCEB2F00831DC9 /* Clase1.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8467AF141FCCEB2F00831DC9 /* Clase1.xcdatamodel */,
+			);
+			currentVersion = 8467AF141FCCEB2F00831DC9 /* Clase1.xcdatamodel */;
+			path = Clase1.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 8401CE3B1FC8F2CF00488CA1 /* Project object */;
 }

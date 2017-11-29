@@ -9,20 +9,41 @@
 import UIKit
 
 class NewPostViewController: UIViewController {
+    
+    @IBOutlet private weak var titleTextField: UITextField!
+    @IBOutlet private weak var contentTextField: UITextField!
 
+    //MARK: Lifecycle methods
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
     }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func newPostButton() {
+    private func send(newPost: Post) {
         
+        PostService.new(post: newPost) {
+            (id, error) in
+            
+            if let _ = error {
+                print(error?.localizedDescription)
+            }else {
+                newPost.uid = id!
+                
+                guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContent.viewContext else { return }
+                do {
+                    try context.save()
+                    self.dismiss(animated: true, completion: nil)
+                    
+                }catch let error {
+                    print(error.localizedDescription)
+                }
+
+            }
+            
+        }
+        
+        /*
         PostService.new(text: "Area51") {
             (success, error) in
             
@@ -31,6 +52,32 @@ class NewPostViewController: UIViewController {
             }else {
                 print(error?.localizedDescription)
             }
+        }*/
+        
+    }
+    private func saveincoredata() -> Post? {
+        
+        guard let context = (UIApplication.shared.delegate as? AppDelegate)?.persistentContent.viewContext else { return nil }
+        
+        let newPost = Post(context: context)
+        newPost.title = titleTextField.text
+        newPost.content = contentTextField.text
+        
+        do {
+            try context.save()
+            return newPost
+           
+        }catch let error {
+            print(error.localizedDescription)
+            return nil
+        }
+        
+    }
+    
+    @IBAction func newPostButton() {
+
+        if let post = saveincoredata() {
+            send(newPost: post)
         }
 
     }
@@ -39,16 +86,5 @@ class NewPostViewController: UIViewController {
             //algo
         }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

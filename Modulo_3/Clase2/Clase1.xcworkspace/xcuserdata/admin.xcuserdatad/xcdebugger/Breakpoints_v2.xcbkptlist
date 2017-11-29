@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Clase1/Model/Services/PostService.swift"
-            timestampString = "533271084.008095"
+            timestampString = "533530057.611624"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "34"
-            endingLineNumber = "34"
+            startingLineNumber = "70"
+            endingLineNumber = "70"
             landmarkName = "new(text:completion:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Clase1/User Interface/Controllers/NewPostViewController.swift"
-            timestampString = "533271084.008263"
+            filePath = "Clase1/Model/Services/PostService.swift"
+            timestampString = "533530057.614948"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "29"
-            endingLineNumber = "29"
-            landmarkName = "newPostButton()"
+            startingLineNumber = "33"
+            endingLineNumber = "33"
+            landmarkName = "delete(post:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

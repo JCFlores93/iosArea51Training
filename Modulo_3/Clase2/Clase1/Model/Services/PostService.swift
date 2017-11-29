@@ -26,6 +26,42 @@ class PostService {
         
     }
     
+    static func delete(post: Post, completion: @escaping (Bool, Error?) -> Void) {
+
+        Alamofire.request("http://localhost:3000/posts/\(post.uid)", method: .delete, parameters: nil, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+            
+            if let _ = response.error {
+                completion(false, response.error)
+            }else {
+                completion(true, nil)
+            }
+            
+        }
+        
+    }
+    
+    static func new(post: Post, completion: @escaping (Int16?, Error?) -> Void) {
+        
+        let parameters = ["title": post.title!, "author": post.content!]
+        
+        Alamofire.request("http://localhost:3000/posts", method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: nil).responseJSON { (response) in
+            
+            if let _ = response.error {
+                completion(nil, response.error)
+            }else {
+                print(response.result.value)
+                if let dic = response.result.value as? [String: Any] {
+                    completion(dic["id"] as? Int16, nil)
+                }else {
+                    completion(nil, nil)
+                }
+                
+            }
+            
+        }
+        
+    }
+    
     static func new(text: String, completion: @escaping (Bool, Error?) -> Void) {
         
         let parameters = ["title": text, "author": "Franti"]
